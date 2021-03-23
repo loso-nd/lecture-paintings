@@ -1,22 +1,21 @@
-
 import 'semantic-ui-css/semantic.min.css';
 import paintings from './painting_data.js' //Acceess to the painting data 
-
-import PaintingsList from './components/PaintingList'; //Access to the {PaintingL} where we create a cards for each painting from the data
+import PaintingList from './components/PaintingList'; 
 import NavBar from './components/NavBar';
 
-
 function App() {
+// Learn how to PASS UP props from child to the parent
+  const test = (message) => {
+    console.log(message)
+  }
   return (
-
     <div>
-    {/* adding attr [key="value"] to Navbar and passing them as props to be used inside our {Navbar}  */}
-          <NavBar color= "green" title=" Painters" description="Legendary Artist"/>
-{/* adding attr [key="value"] to {PaintingsList} & passing it as props for access to be used inside {PaintingList} */}
-          <PaintingsList  paintingsList={paintings}/>
+{/* passing props down from parent to child to allow access to {Navbar}  */}
+      {/* <NavBar testing={test}/> // passing props up from the child to the parent */}
+        <NavBar color= "green" title=" Painters" description="Legendary Artist"/>
+{/*  passing props down from parent to child to allow access to {PaintingList} */}
+      <PaintingList paintingsList={paintings} anotherTest={test}/>
     </div>
-
   );
 }
-
 export default App;

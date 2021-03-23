@@ -2,8 +2,9 @@
 const NavBar = props => {
     console.log(props)
     return (
-        //pass NavBar dynamice colors
-        <div className= { `ui inverted ${props.color} menu`}>
+        //pass NavBar dynamice colors 
+        // passing up from chid to parent  onClick={() => props.testing("Hello from Navbar")
+        <div onClick={() => props.testing("Hello from Navbar")} className= { `ui inverted ${props.color} menu`}>
             <a className="item" href="/">
                 <h2 className="ui header">
                     <div className="content">{props.title}</div>

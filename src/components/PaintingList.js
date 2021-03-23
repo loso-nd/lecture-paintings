@@ -11,7 +11,7 @@ const PaintingList = props => {
                     return <PaintingCard key={painting.id} painting={painting} />
                 })
             }
-            
+            {/* {props.anotherTest("Still here")} passing up from chid to parent */}
         </div>
 
     )

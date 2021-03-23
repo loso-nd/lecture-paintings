@@ -1,4 +1,4 @@
-## App.js
+!## App.js
 - Parent file
 - Renders components to the DOM
 - Imports
@@ -10,31 +10,43 @@ Function component return
     - {NavBar} passing props in forms of attr [key="value"]
     - {PaintingsList} passing props in forms of attr [key="value"]
 
-##PaintingList
-    - Responsiblity: 
+!##PaintingList
+    ?- Responsiblity: 
     We want to display a painting Card for every painting in our data, By looking at the original painting arr, we already setup our paintings to have been passed down as props. For every item in our painting arr we want to render a painting card. Using map we can iterate thru our arr and return an arr of painting Cards. 
 
-    - Imports
+    ?- Imports
         - {PaintingCard} file is where we add the details for what we want to see on the card. Then import it here where each of those items are mapped into its own single card.
 
-    function components return
+    ?function components return
         - We return a single {PaintingCard} and pass the painting.id, & paintings data into it to make them available to set up the structure of how we want the details passed to be displayed no the card. 
 
-    ##PaintingCard
-        - Responsiblity: 
+!##PaintingCard
+        ?- Responsiblity: 
         Setting up the layout for the  details of the paintings. 
         
         
-        Overview:
-        At this point {PaintingCard} has access to all the details of the of the paintslist arr and we return those details in a <div>
+!Overview:
+    ?{index.js} Top tier hierachy of all our components which renders the {App}
+
+    ?- {App} 
+    imports semantic-ui, paintings data, {paintingsList} and {NavBar} which are both dynamically inserted components. Both components are passed props which allows us to access them via props inside the designated component. Dynamically adding components here are returned to be display to the DOM
 
         Then...
 
-        {PaintingList} imports {PaintingCard}, executes a map on the PaintingsList arr and for each item in that arr it returns a single {PaintingCard} passing in key={painting.id}, painting={painting} as props. Since the details in {PaintingCard} will not be valid if access is not granted via props. 
+    ?- {NavBar} 
+    A fucntional component now has access to the props passed into it from the {App}. We can access those props, via [ props.key ]. Recall passing props means that we use [key = "value" ]
 
-        Then...
+       Then...         
 
-        {App} imports the paintingsList and we dynamically add the component to the return to display the list of painting detials in the form of a card to the DOM
+    ?- {PaintingList} 
+    functional compponent, imports {PaintingCard}, executes a map on the PaintingsList arr. This arr is only avaialble bc the paintings data was passed as props into the dynamic component from {App}. For each item in that arr it {PaintingList} will return a single {PaintingCard}. We pass in the following key={painting.id}, painting={painting} as props to be used later inside {PaintingCard}. Since the details that we want to be displayed on on {PaintingCard} will not be avaiable unless we pass the dynamic component props.
 
-        ##Deconstructing 
-            - Allows us to write and read cleaner code
+    !NOTE - PaintingsList is the name of the key we used to represent our arr
+
+        
+    ?- {PaintingCard} 
+    At this point {PaintingCard} has access to all the details of the of the paintslist arr and we return those details in a <div> by callig [ props.key]
+
+
+    !##Deconstructing 
+    - Allows us to write and read cleaner code
