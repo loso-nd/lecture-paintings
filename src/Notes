@@ -1,0 +1,40 @@
+## App.js
+- Parent file
+- Renders components to the DOM
+- Imports
+    - painting data file to provide access to other {PaintingList} via props
+    - {PaintingList} file where we get access to all of our paintings in order to create a single card for each painting from our data
+
+    - {NavBar} file to render the to the DOM
+Function component return
+    - {NavBar} passing props in forms of attr [key="value"]
+    - {PaintingsList} passing props in forms of attr [key="value"]
+
+##PaintingList
+    - Responsiblity: 
+    We want to display a painting Card for every painting in our data, By looking at the original painting arr, we already setup our paintings to have been passed down as props. For every item in our painting arr we want to render a painting card. Using map we can iterate thru our arr and return an arr of painting Cards. 
+
+    - Imports
+        - {PaintingCard} file is where we add the details for what we want to see on the card. Then import it here where each of those items are mapped into its own single card.
+
+    function components return
+        - We return a single {PaintingCard} and pass the painting.id, & paintings data into it to make them available to set up the structure of how we want the details passed to be displayed no the card. 
+
+    ##PaintingCard
+        - Responsiblity: 
+        Setting up the layout for the  details of the paintings. 
+        
+        
+        Overview:
+        At this point {PaintingCard} has access to all the details of the of the paintslist arr and we return those details in a <div>
+
+        Then...
+
+        {PaintingList} imports {PaintingCard}, executes a map on the PaintingsList arr and for each item in that arr it returns a single {PaintingCard} passing in key={painting.id}, painting={painting} as props. Since the details in {PaintingCard} will not be valid if access is not granted via props. 
+
+        Then...
+
+        {App} imports the paintingsList and we dynamically add the component to the return to display the list of painting detials in the form of a card to the DOM
+
+        ##Deconstructing 
+            - Allows us to write and read cleaner code
