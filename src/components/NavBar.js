@@ -4,7 +4,7 @@ const NavBar = props => {
     return (
         //pass NavBar dynamice colors
         <div className= { `ui inverted ${props.color} menu`}>
-            <a className="item">
+            <a className="item" href="/">
                 <h2 className="ui header">
                     <div className="content">{props.title}</div>
                     <div className="sub header">{props.description}</div>
