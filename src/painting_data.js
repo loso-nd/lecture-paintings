@@ -1,4 +1,4 @@
-export default [
+export let paintings = [
     {
       id: '59bd5a519c18db5297a32479',
       collecting_institution: '',
@@ -2308,3 +2308,5 @@ export default [
       votes: 95
     }
   ];
+
+export let artist = [];
