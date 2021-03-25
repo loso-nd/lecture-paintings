@@ -1,5 +1,4 @@
 import PaintingCard from './PaintingCard'
-
 const PaintingList = props => {
     console.log(props)
 

@@ -56,3 +56,38 @@ Function component return
 ?Part 2 - React state
 
 information about importing and specifics 7min - 9.30mins
+
+Explanaion on how and why we ued e.target.value, how its passed into {NavBar}, use of setState 40min - 44min
+
+The difference between 
+    ?import React, { Component } from 'react';
+    ?import React, from 'react';
+
+When to use this.props  49min - 
+
+
+** Part 3 - React Forms **
+
+- Add a button that will hide / show our form.
+- Button should be tied to an event
+- We need to figure out a way to keep track of the state of our form, to track whether or not the form is visible or not.( conditional rendering if /else)
+- add another state called formView which will respresent whether or not the form is visible or not 
+- We set a tenary for the the formView and the painting to hide / show
+
+!toggleForm & prevState Explanaion [4 min - 16min ]
+- Execution of this method is based on the current state of formView. 
+- We want to change the state *setState* via synthetic event *onClick* passed to a button w/ a handler called toggleForm().
+- toggleForm() calls *setState* which makes a copy of a current state as a CB() & returns an updated view where the key: value pair w/ formView as the key and !prevState.formView as the value. Which gives  us he opposite of the current state. 
+
+!Data Flow with addPaintings()
+- takes paintings in our arr, from the state and adds a painting
+
+!PaintingForm 18:50min
+- we want to find a way to handler changes on a form or check if a form has been touched via onchance or OnBlur
+-handleChange() is where we update the state *setState*
+- We specify which part of the state we want to target when using spread operator 
+- Make a copy of the previous state via the spread operateor, add a 2nd arg as " key: value" pairs that will take [ e.target.name ] as the key and [ e.target.value ] as the value, which refers to each input in our form and listen for users input, respectfully. 
+
+?Client Side Validation
+- How handleSubmit, Validation if both the image and title exist we want to updated our painting to be rendered to the paage
+- in {App} we want to pass the addPaintings() as props to the form

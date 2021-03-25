@@ -14,10 +14,11 @@ const NavBar = props => {
             </a>
 {/* Triggers onChange in the App */}
             <select onChange={props.changeColor} className="ui search dropdown right menu">
-                <option value="purple">Purple</option>
+                <option value="purple">Green</option>
                 <option value="teal">Teal</option>
                 <option value="orange">Orange</option>
                 <option value="yellow">Yellow</option>
+                <option value="purple">Purple</option>
             </select>
         </div>
     )

@@ -1,11 +1,11 @@
 const PaintingCard = props => {
-    let {image, title, artist, date, dimensions} = props.painting
+    let {image, title, artist, date, width, height} = props.painting
     return (
         <div>
             <img src ={image} alt={artist.name}/>
             <h4>"{title}" by {artist.name}</h4>
             <p>Year: {date}</p>
-            <p>Dimensions: {dimensions.width} in. x {dimensions.height}</p>
+            <p>Dimensions: {width} in. x {height}</p>
         </div>       
         // <div>
         //     <img src ={props.painting.image} />
