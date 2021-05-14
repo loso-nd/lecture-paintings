@@ -15,40 +15,45 @@ class PaintingForm extends Component{
     }
 
     handleChange = (e) => {
-        console.log(e.target.value) // how we target a particular field with user input
+        //console.log(e.target.value) // how we target a particular field with user input
        // console.log(this.state.art)
         this.setState({ art: {...this.state.art, [e.target.name]: e.target.value} })
+        //art: tell the state which obj we are accessing
+        //e.target.name = telling the spread operator that we are acceessing something with a specific key
+        //if we fill in our form we should be able to see this infor in the react app (painting form)
     }
 
-//     handleSubmit = (e) => {
-//         e.preventDefault()
-//         this.props.addPainting(this.state.art)
-//         if(this.state.art.image.length  > 1 && this.state.art.title.length > 1){
-//             //console.log(this.state)
-// // this.props bc addPainting() was created in {App} and passed as a prop to be used in {pFrom}
-//     //take the art, once its executed, run the validation, pass it our art and send it back to the {App} to render
-//             this.props.addPainting(this.state.art)
-//         }
-//         else if(this.state.art.image.length > 1 ){
-//             this.validateLength("title")
-//         }
-//         else if(this.state.art.title.length > 1 ){
-//             this.validateLength("image")
-//         } 
-//         else {
-//             this.validateLength("title and image")
-//         }
-//     }
+    handleSubmit = (e) => {
+        e.preventDefault()
+        if(this.state.art.image.length  > 1 && this.state.art.title.length > 1){
+            //console.log(this.state)
+            this.props.addPainting(this.state.art)
+        /** 
+            this.props bc addPainting() was created in {App} and passed as a prop to be used in {pFrom}
+            take the art, once its executed, run the validation, pass it our art and send it back to the {App} to render 
+        */
+            
+        }
+        else if(this.state.art.image.length > 1 ){
+            this.validateLength("title")
+        }
+        else if(this.state.art.title.length > 1 ){
+            this.validateLength("image")
+        } 
+        else {
+            this.validateLength("title and image")
+        }
+    }
 
-handleSubmit = (e) => {
-    e.preventDefault()
-    this.props.addPainting(this.state.art)
-}
+// handleSubmit = (e) => {
+//     e.preventDefault()
+//     this.props.addPainting(this.state.art) //need explanation on this one
+// }
 
-    // validateLength(item){
-    //     this.setState({error: `Sorry ${item} must be 5 characters long`})
-    // }
-//Hello 
+    validateLength(item){
+        this.setState({error: `Sorry ${item} must be 5 characters long`})
+    }
+
     render(){
        
         return (

@@ -28,19 +28,19 @@ changeColor = (e) => {
 
 //execution of this is based on the current state of our form view
 toggleForm = () => {
-  this.setState(prevState => {
-    console.log(prevState)
-    return {formView: !prevState.formView}
+  this.setState(prevState => { //returns the original state when it is called, lines 13-15
+    console.log("PrevState:", prevState)
+    return {formView: !prevState.formView} //then setState is executed and resolved
   }, () => console.log("Inside/ after setState ran:", this.state)
   ) 
   console.log("Outside/ before setState ran:", this.state)
 }
 
 addPainting = (painting) => {
-  //console.log("WFT")
-  //using spread operator to target the state we want to updated set the value to a spread opertator and add in our single painting into the new arr
+  console.log(painting)
+  //using spread operator to make copy of our paintings & we want to update state by added in our single painting into the new arr
   //this.setState({paintings: [...paintings, paintings]})
-  this.setState({paintings:[...this.state.paintings, painting]})
+  this.setState({paintings: [...paintings, painting]})
 
 }
   
@@ -48,13 +48,16 @@ render() {
   return (
       <div>
         {/* passing props down from parent to child to allow access to {Navbar} usig state  */}
-        <NavBar color={this.state.color} title="Painters" description="Legendary Artist"
-            changeColor={this.changeColor}/>
+        <NavBar 
+          color={this.state.color} 
+          title="Painters" 
+          description="Legendary Artist"
+          changeColor={this.changeColor}/>
 
-        <button onClick={ this.toggleForm}>Toggle Form</button>
+        <button onClick={this.toggleForm}>Toggle Form</button>
 
         {/*  Ternary - if false then form should disappear else from should appear */}
-        {this.state.formView? <PaintingForm addPainting={this.addPainting} /> :
+        {this.state.formView ? <PaintingForm addPainting={this.addPainting} /> :
       <PaintingsList paintingsList={this.state.paintings} />}
       </div>
     )
