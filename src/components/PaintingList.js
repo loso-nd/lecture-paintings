@@ -7,7 +7,7 @@ const PaintingList = props => {
         <div>
             {
                 props.paintingsList.map(painting => {
-                    return <PaintingCard key={painting.id} painting={painting} />
+                    return <PaintingCard key={painting.id} painting={painting} addVote={props.addVote}/>
                 })
             }
             {/* {props.anotherTest("Still here")} passing up from chid to parent */}
@@ -17,3 +17,5 @@ const PaintingList = props => {
 }
 
 export default PaintingList;
+
+

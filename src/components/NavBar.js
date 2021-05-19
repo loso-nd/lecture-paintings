@@ -1,7 +1,7 @@
 // When Navbar is called, I am going to pass it something and if it has a value we can do so by saying (props.something). In order to fill the object with something we need to go where the component is being rendered and pass it some props
 //Presentational Component
 const NavBar = props => {
-    console.log(props)
+   // console.log(props)
     return (
         //pass NavBar dynamice colors 
         // passing up from chid to parent  onClick={() => props.testing("Hello from Navbar")

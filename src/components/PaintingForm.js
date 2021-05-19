@@ -54,6 +54,18 @@ class PaintingForm extends Component{
         this.setState({error: `Sorry ${item} must be 5 characters long`})
     }
 
+
+    componentDidMount(){
+        console.log("Hi from painting componentDidMount!")
+        this.props.updateMessage(null)
+    }
+
+    componentWillUnmount(){
+        console.log("Hi from componentWillUnmount!")
+        this.props.updateMessage("Hello Paintings")
+        
+    }
+
     render(){
        
         return (

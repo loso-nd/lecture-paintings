@@ -15,6 +15,7 @@ state = {
   paintings: paintings
 }
 
+
 //setState is asynfunc which gets removed from the executions flow and then added back in when resolved
 changeColor = (e) => {
   console.log(e.target.value)
