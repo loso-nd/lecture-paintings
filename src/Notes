@@ -91,3 +91,6 @@ When to use this.props  49min -
 ?Client Side Validation
 - How handleSubmit, Validation if both the image and title exist we want to updated our painting to be rendered to the paage
 - in {App} we want to pass the addPaintings() as props to the form
+
+
+!Created a second branch with life cycle methods.
